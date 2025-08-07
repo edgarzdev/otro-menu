@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        $this->view->render('auth');
+        $this->view->render('login');
     }
 
     public function login()
@@ -43,7 +43,7 @@ class AuthController extends Controller
                 'username' => $userData['username'],
                 'email' => $userData['email']
             ]);
-            $this->redirect('dashboard');
+            $this->redirect('admin');
             return;
         } else {
             $this->redirect('auth', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_DATA]);
